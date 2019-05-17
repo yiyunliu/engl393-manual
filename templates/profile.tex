@@ -1,0 +1,39 @@
+\chapter{<- plant_name ->}
+
+\begin{tikzpicture}[remember picture,overlay] \node[anchor=west,inner
+sep=0pt] at (current page text area.west|-0,6cm)
+{\includegraphics[height=4cm]{<- plant_name ->.jpg}};
+\end{tikzpicture}
+
+% table
+<- plant_info ->
+    
+\begin{definition}
+<- plant_description ->  
+\end{definition}
+   
+    
+\begin{instruction}{Planting}
+  \begin{itemize}
+    <- FOREACH inst in insts ->
+    \item <- inst ->
+    <- END ->
+  \end{itemize}
+\end{instruction}
+
+    
+\begin{instruction2}{Harvesting}
+  \begin{itemize}
+    <- FOREACH hinst in insts ->
+    \item <- hinst ->
+    <- END ->
+  \end{itemize}
+\end{instruction2}
+
+\begin{tip}
+  \begin{itemize}
+    <- FOREACH tip in tips ->
+    \item <- tip ->
+    <- END ->    
+  \end{itemize}
+\end{tip}

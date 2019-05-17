@@ -1,0 +1,244 @@
+\documentclass[12pt, oneside, a4paper]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+% placeholder
+\usepackage{lipsum}
+\usepackage[svgnames]{xcolor}
+\usepackage[tikz]{bclogo}
+\usepackage{fontawesome}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\usepackage{tikzpagenodes}
+
+
+% Definition
+\newtcolorbox{definition}{
+  skin=enhanced,
+  breakable,
+  fonttitle=\bfseries,
+  colback=white,
+  arc=0pt,
+  outer arc=0pt,
+  title={Definition:},
+  shadow={1mm}{-1mm}{0mm}{fill=gray,opacity=0.5,sharp corners}
+}
+
+% hyperlink
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Sharelatex Example},
+    bookmarks=true,
+    pdfpagemode=FullScreen,
+}
+
+% title
+\title{The Manual of Garden Maintenance}
+\author{Nanashi}
+\date{May 2019}
+
+
+% , couleur=YellowGreen
+\newenvironment{instruction}[1]
+    {\begin{bclogo}[logo=\textcolor{ForestGreen}{\faTree}, noborder=true, couleurBarre=ForestGreen]{#1}
+    }
+    { 
+       
+    \end{bclogo}
+    }
+% couleurBarre=ForestGreen, couleur=Yellow
+\newenvironment{instruction2}[1]
+    {\begin{bclogo}[logo=\textcolor{YellowGreen}{\faTree}, noborder=true, couleurBarre=YellowGreen]{#1}
+    }
+    { 
+    \end{bclogo}
+    }
+
+\newenvironment{warning}{
+    \begin{bclogo}[logo=\bcattention, couleurBarre=red, noborder=true, 
+               couleur=LightSalmon]{Warning}
+    }
+    {
+        \end{bclogo}
+    }
+    
+\newenvironment{tip}{
+    \begin{bclogo}[logo=\bcinfo, couleurBarre=orange, noborder=true, couleur=white]{Tips}
+}
+{
+    \end{bclogo}
+}
+    
+% space between paragraphs
+\setlength{\parskip}{\baselineskip}
+
+\begin{document}
+\frontmatter
+\begin{titlingpage}
+\aliaspagestyle{titlingpage}{plain}
+% \setlength{\droptitle}{30pt} lower the title
+\maketitle
+
+\end{titlingpage}
+
+\begin{abstract}
+\abstractintoc
+    The Manual of Garden Maintenance is a port of the original Garden Maintenance Manual into \LaTeX. While it is still at its early stage, we believe the flexibility it offers will be enormously useful in the long run. The source code is available at our \href{https://github.com}{github repository}.
+    
+    The Manual contains mostly the same information from the previous manual, with a few minor updates and corrections. Please feel free to give as suggestions and file tickets, or even better, contribute to the project. 
+
+    
+\end{abstract}
+\clearpage
+\tableofcontents
+\clearpage
+
+
+% \pagestyle{headings}
+\chapter{Introduction}
+% stolen from the garden manual
+In the semester of Fall-2017, Patrick Nelson’s ENGL393 students received a grant from the English
+department to fund a gardening project on campus at the Eppley Center’s community garden and
+Tawes patio. This ongoing project is an opportunity for students to cultivate pride in contributing their
+time and efforts to a product that they can visit and watch develop for years to come. In order to
+assist the ENGL393 student in contributing to the gardens, it is imperative that they have a gardening
+manual that not only provides information on the plants they will be working on, but information
+relevant to the current state of the gardens and the gardening aptitudes of the students doing the
+gardening.
+
+The ENGL393 Harvesting and Maintenance manual that you are reading now has been created to
+suit the needs of the gardens and students who have had the graced the enrollment roster of Patrick
+Nelson’s courses prior. As this is a live document it is encouraged that yours and proceeding classes
+revise and update the manual to better befit the most current of needs of the garden and its
+gardeners. From our class to yours, we hope that you find this manual as sufficient as it was to
+us...and if it isn’t, revise it!
+
+\chapter{Typographical Conventions}
+% \lipsum[1]
+% fill in the importance of warning/info
+This chapter gives a brief introduction about three visuals we will use in our plant profiles. They are intended to help the reader quickly locate the information she needs. 
+\begin{instruction}{Instructions}
+    \begin{itemize}
+        \item Instructions are usually displayed in the style of bullets.
+        \item These are steps you should follow to complete a certain maintenance task.
+        \item Unlike the tips, which are optional, you do need to perform the instructions as a necessary part of the maintenance.
+    \end{itemize}
+\end{instruction}
+
+% \begin{bclogo}[logo=\faWarning, noborder=true, barre=none]{Important!}
+%     \lipsum[2]
+% \end{bclogo}
+
+\begin{tip}
+    We will occasionally provide tips that can potentially increase your productivity.
+\end{tip}
+
+% \clearpage
+\begin{warning}
+    This visual reminds you to avoid operations that could be dangerous to you or the garden. 
+\end{warning}
+
+
+
+
+
+\chapter{Germinating Seeds}
+    \begin{definition}
+        \textbf{Germination} is the process in which a seed develops into a seedling.
+If one wishes to get a head start on crop production before the growing season begins (after the last
+frost date), they will most likely look to germinating their seeds in a controlled environment until
+preferable outside conditions are met.
+    \end{definition}
+    
+    \section{Seeding Germination Guideline}
+    \begin{description}
+        \item[Temperature] slightly above 60-75 F.
+        \item[Moisture] germinating medium must be moist but not oversaturated; do not waterlog seeds.
+        \item[Oxygen] seeds must be exposed to oxygen whether through shallow, porous soil or porous medium.
+    \end{description}    
+    \section{Germination Process}
+        \begin{itemize}
+            \item For easy transplantation into an outdoor garden, first allow your seeds to germinate indoors for 30 days before
+the last frost date (roughly April 11th in Maryland).
+            \item For indoor germination, find a tray that is roughly an inch deep and fill it with seed starting mix; proceed to push
+in each seed about 0.5” max into the mix. Cover the tray with saran wrap to lock in moisture and store away
+from direct sunlight at a temperature of around 75
+oF.
+            \item Once the seeds show signs of sprouting, remove saran wrap and move the tray to a source of sunlight; take
+care of seedling until the last frost date by continually checking in on soil moisture levels and overall growth
+progress.
+        \end{itemize}
+\mainmatter
+\chapterstyle{ell}
+\chapter{Basil}
+
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=west,inner sep=0pt] at (current page text area.west|-0,6cm) {\includegraphics[height=4cm]{1920px-Basil-Basilico-Ocimum_basilicum-albahaca.jpg}};
+\end{tikzpicture}
+
+    % \begin{tabular}{||l|l||}
+    %     \hline
+    %     Life Cycle &  Perennial \\ \hline
+    %      Sun Exposure & Full \\ \hline
+    %      Preferred Soil & Loamy \\ \hline
+    %      Water & Often \\ \hline
+    % \end{tabular}
+    
+    \begin{definition}
+     Basil is native to tropical regions from central Africa to Southeast Asia.[3] It is a tender plant, and is used in cuisines worldwide. Depending on the species and cultivar, the leaves may taste somewhat like anise, with a strong, pungent, often sweet smell.
+    \end{definition}
+   
+    
+    \begin{instruction}{Planting}
+        \begin{itemize}
+            \item Basil needs a location that gets around 8 hours of sun a day with a preferable air temperature of 80o F.
+            \item Find or create a lot of rich and loamy soil at a temperature of around 70o
+F.
+            \item Keep soil moist and water often during dry periods.
+            \item Surround the basil plant’s stalk with mulch when the plant grows to a height where its leaves will not make
+contact with the ground. Mulch aides to keep soil moisture.
+        \end{itemize}
+    \end{instruction}
+
+    
+    \begin{instruction2}{Harvesting}
+        \begin{itemize}
+            \item Pick basil leaves immediately as they reach lengths of about 7 inches by pinching the leaf directly at the stem.
+            \item It is important to pick leaves regularly as it prompts the basil plant to growmore.
+            \item Air dry basil leaves and proceed to store them in airtight ziploc bags in the freezer if you do not wish to use them in the immediate week after harvesting.
+        \end{itemize}
+    \end{instruction2}
+
+    \begin{tip}
+        \begin{itemize}
+            \item As basil plants crave moisture, be sure to keep their soil moist by wateringregularly
+            \item When watering, apply water directly to the base of the plant. Splashing leaves with water can lead to fungus
+            \item Regularly harvest spinach leaves to instigate further plant growth.
+            \item Pay close attention to flower growth and be sure to either pinch or cut it off as soon as possible as it halts leaf production.
+        \end{itemize}
+    \end{tip}
+
+
+
+\chapter{Carrot}
+\chapter{Cilantro}
+\chapter{Dill}
+\chapter{Fish Peppers}
+\chapter{Garden Peas}
+\chapter{Garlic Chives}
+\chapter{Spinach}
+\chapter{Strawberry}
+\chapter{Tarragon}
+\chapter{Tomatoes}
+\chapter{Radishes}
+\chapter{Rainbow Pepper}
+
+\backmatter
+\chapter{Glossary}
+\chapter{Quick Response Codes}
+\chapter{2019-2020 Journal}
+
+\end{document}
